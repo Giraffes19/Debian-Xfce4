@@ -25,7 +25,13 @@ apt install -y \
     xfdesktop4 \
     xfwm4 \
     adwaita-qt \
-    qt5ct 
+    qt5ct \
+    linux-headers-amd64 \ 
+    nvidia-driver firmware-misc-nonfree
+curl -fsSL https://ppa.ablaze.one/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/Floorp.gpg
+sudo curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
+apt update
+apt install floorp
 
 echo 
 echo xfce install complete, please reboot and issue 'startx'
